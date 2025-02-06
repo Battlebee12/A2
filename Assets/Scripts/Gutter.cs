@@ -4,8 +4,11 @@ public class Gutter : MonoBehaviour
 {
     private void OnTriggerEnter(Collider triggeredBody)
     {
-        Debug.Log("detected collisions");
-        Debug.Log($"{triggeredBody.gameObject.name} collided with {gameObject.name} and stopped moving.");
+         if (triggeredBody.CompareTag("Ball")){
+
+         
+        // Debug.Log("detected collisions");
+        // Debug.Log($"{triggeredBody.gameObject.name} collided with {gameObject.name} and stopped moving.");
 
         // Get the Rigidbody of the ball
         Rigidbody ballRigidBody = triggeredBody.gameObject.GetComponent<Rigidbody>();
@@ -21,5 +24,6 @@ public class Gutter : MonoBehaviour
         // i changed the direction to z axis
         Vector3 newVelocity = Vector3.forward * velocityMagnitude;
         ballRigidBody.linearVelocity = newVelocity;
+        }
     }
 }
