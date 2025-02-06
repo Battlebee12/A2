@@ -19,7 +19,7 @@ public class Gutter : MonoBehaviour
 
         // Was facing problems with the applying force to z axis, as the colliders got messed up whenever
         // i changed the direction to z axis
-        Vector3 newVelocity = -Vector3.forward * velocityMagnitude;
+        Vector3 newVelocity = Vector3.forward * velocityMagnitude;
         ballRigidBody.linearVelocity = newVelocity;
     }
 }
